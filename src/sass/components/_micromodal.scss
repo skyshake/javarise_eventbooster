@@ -1,0 +1,438 @@
+// Z magictime
+.magictime {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@media (print), (prefers-reduced-motion) {
+  .magictime {
+    -webkit-animation: unset !important;
+    animation: unset !important;
+    transition: none !important;
+  }
+}
+
+.puffIn {
+  -webkit-animation-name: puffIn;
+  animation-name: puffIn;
+}
+
+@-webkit-keyframes puffIn {
+  0% {
+    opacity: 0;
+    transform-origin: 50% 50%;
+    transform: scale(2, 2);
+    filter: blur(2px);
+  }
+  100% {
+    opacity: 1;
+    transform-origin: 50% 50%;
+    transform: scale(1, 1);
+    filter: blur(0px);
+  }
+}
+@keyframes puffIn {
+  0% {
+    opacity: 0;
+    transform-origin: 50% 50%;
+    transform: scale(2, 2);
+    filter: blur(2px);
+  }
+  100% {
+    opacity: 1;
+    transform-origin: 50% 50%;
+    transform: scale(1, 1);
+    filter: blur(0px);
+  }
+}
+
+// Źródło: https://gist.github.com/ghosh/4f94cf497d7090359a5c9f81caf60699#file-micromodal-css
+.modal__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: $bg-overlay;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 200;
+}
+
+.modal__container {
+  background-color: $bg-color;
+  padding: 30px;
+  width: calc(946px * 0.7);
+  max-height: 100vh;
+  border-radius: 4px;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.modal__header {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.modal__title {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: 600;
+  font-size: 1.25rem;
+  line-height: 1.25;
+  color: $focus-color;
+  box-sizing: border-box;
+}
+
+.modal__close {
+  background: transparent;
+  border: 0;
+}
+
+.modal__header .modal__close:before {
+  content: '\2715';
+  color: $main-color;
+  font-size: $high-size;
+  cursor: pointer;
+}
+
+.modal__content {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+  color: $bg-overlay;
+  display: flex;
+  flex-direction: columns;
+  gap: 5%;
+}
+
+.modal__btn {
+  font-size: 0.875rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  background-color: $accent-color;
+  color: $bg-overlay;
+  border-radius: 0.25rem;
+  border-style: none;
+  border-width: 0;
+  cursor: pointer;
+  text-transform: none;
+  overflow: visible;
+  line-height: 1.15;
+  margin: 0;
+  will-change: transform;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  transition: -webkit-transform 0.25s ease-out;
+  transition: transform 0.25s ease-out;
+  transition: transform 0.25s ease-out, -webkit-transform 0.25s ease-out;
+}
+
+.modal__btn:focus,
+.modal__btn:hover {
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
+}
+
+.modal__btn-primary {
+  background-color: $second-color;
+  color: $accent-color;
+}
+
+/**************************\
+  Demo Animation Style
+\**************************/
+@keyframes mmfadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes mmfadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes mmslideIn {
+  from {
+    transform: translateY(15%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes mmslideOut {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-10%);
+  }
+}
+
+@keyframes puffIn {
+  from {
+    opacity: 0;
+    transform-origin: 50% 50%;
+    transform: scale(2, 2);
+    filter: blur(2px);
+  }
+  to {
+    opacity: 1;
+    transform-origin: 50% 50%;
+    transform: scale(1, 1);
+    filter: blur(0px);
+  }
+}
+
+.micromodal-slide {
+  display: none;
+}
+
+.micromodal-slide.is-open {
+  display: block;
+}
+
+.micromodal-slide[aria-hidden='false'] .modal__overlay {
+  animation: mmfadeIn 0.3s cubic-bezier(0, 0, 0.2, 1);
+}
+
+// .micromodal-slide[aria-hidden="false"] .modal__container {
+//   animation: mmslideIn .3s cubic-bezier(0, 0, .2, 1);
+// }
+
+.micromodal-slide[aria-hidden='true'] .modal__overlay {
+  animation: mmfadeOut 0.3s cubic-bezier(0, 0, 0.2, 1);
+}
+
+.micromodal-slide[aria-hidden='true'] .modal__container {
+  animation: mmslideOut 0.3s cubic-bezier(0, 0, 0.2, 1);
+}
+
+.micromodal-slide .modal__container,
+.micromodal-slide .modal__overlay {
+  will-change: transform;
+}
+
+.modal {
+  &__content {
+    font-family: 'Montserrat', sans-serif;
+    font-size: $medium-size;
+    font-weight: 400;
+  }
+
+  &__content h2 {
+    color: $second-color;
+    font-weight: 600;
+    font-size: $normal-size;
+  }
+
+  &__container {
+    border-top-left-radius: 150px;
+    border-bottom-right-radius: 150px;
+    margin: auto 12px;
+  }
+
+  &__top_image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__top_image img {
+    display: block;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+
+    margin-bottom: 74px;
+  }
+}
+
+.event {
+  &__image {
+    display: none;
+
+    & img {
+      display: block;
+      object-fit: cover;
+      max-width: 360px;
+    }
+  }
+  &__details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+  }
+  &__btn1 {
+    display: inline-block;
+    background-color: $main-color;
+    color: $accent-color;
+    padding-top: 10px;
+    border: 1px solid $main-color;
+    padding-bottom: 10px;
+    padding-left: 19px;
+    padding-right: 19px;
+    border-radius: 5px;
+    margin-left: -34px;
+    margin-top: 10px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+    &:hover,
+    &:focus {
+      background-color: $accent-color;
+      color: $main-color;
+    }
+  }
+  &__info {
+    max-height: 100px;
+    overflow: auto;
+    &::-webkit-scrollbar {
+      width: 10px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: $main-color;
+      border-radius: 10px;
+      height: 50px;
+    }
+  }
+  &__btn2 {
+    display: inline-block;
+    background-color: $bg-color;
+    color: $main-color;
+    border: 1px $main-color solid;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 3px;
+    padding-right: 3px;
+    border-radius: 5px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+    &:hover {
+      color: $bg-color;
+      background: $main-color;
+    }
+  }
+  &__single_price {
+    margin-bottom: 10px;
+    padding-left: 34px;
+    position: relative;
+
+    &::before {
+      content: url(../images/code-ticket.svg);
+      width: 28px;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+}
+
+//  tablet
+@media screen and (min-width: 768px) {
+  .modal {
+    &__container {
+      width: 595px;
+    }
+    &__footer {
+      width: 260px;
+    }
+  }
+
+  .event {
+    &__image {
+      display: block;
+      width: 233px;
+      & img {
+        max-width: 233px;
+        height: 100%;
+      }
+    }
+    &__details {
+      align-items: flex-start;
+      text-align: left;
+    }
+    &__image {
+      display: block;
+      max-width: 360px;
+      & img {
+        display: block;
+      }
+    }
+    &__btn2 {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+}
+//  desktop
+@media screen and (min-width: 1024px) {
+  .modal {
+    &__container {
+      width: 942px;
+    }
+    &__content {
+      font-size: 18px;
+    }
+
+    &__content h2 {
+      font-size: 24px;
+    }
+    &__footer {
+      width: 260px;
+    }
+  }
+  .event {
+    &__image {
+      display: block;
+      width: 360px;
+      & img {
+        max-width: 360px;
+        height: 100%;
+      }
+    }
+    &__details {
+      align-items: flex-start;
+      text-align: left;
+    }
+    &__info {
+      max-width: 450px;
+      max-height: 100px;
+      overflow: auto;
+    }
+    &__btn2 {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+}

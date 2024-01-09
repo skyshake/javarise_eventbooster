@@ -1,0 +1,19 @@
+.container {
+  min-width: 280px;
+  max-width: 946px;
+  margin: 0 auto;
+  width: 280px;
+  padding: 0 auto;
+}
+//  tablet
+@media screen and (min-width: 768px) {
+  .container {
+    width: 610px;
+  }
+}
+//  desktop
+@media screen and (min-width: 1024px) {
+  .container {
+    width: 946px;
+  }
+}

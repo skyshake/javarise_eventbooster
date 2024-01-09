@@ -1,2 +1,15 @@
-@import './common';
-@import './example';
+@import './base/common';
+@import './base/container';
+
+@import './utils/variables';
+@import './utils/background';
+
+@import './layout/header';
+@import './layout/cards';
+@import './layout/footer';
+
+@import './components/pagination';
+@import './components/loader';
+@import './components/modal-team';
+@import './components/spinner';
+@import './components/micromodal';

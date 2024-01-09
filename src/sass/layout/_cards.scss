@@ -1,0 +1,190 @@
+.section__cards {
+  margin: -60px 0;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+  margin: 0 -2px;
+  z-index: 10;
+  position: relative;
+
+  &__item {
+    position: relative;
+    width: 138px;
+    max-height: 242px;
+    text-align: center;
+    margin: 0 2px 30px 2px;
+    transition: 0.3s ease-in-out;
+    transition-property: transform;
+
+    &:hover,
+    &:focus {
+      transform: scale(1.1);
+      transition: 0.3s ease-in-out;
+      cursor: pointer;
+      .cards__image {
+        box-shadow: 20px -16px 34px -15px $box-color;
+      }
+    }
+  }
+  &__box {
+    position: relative;
+    z-index: 10;
+    display: block;
+
+    &::before {
+      position: absolute;
+      top: -13px;
+      right: 0;
+      content: '';
+      width: 108px;
+      height: 101px;
+      border: 1px solid $third-color;
+      border-radius: 50px 0px;
+    }
+  }
+  &__image {
+    display: block;
+    width: 128px;
+    height: 161px;
+    border-radius: 50px 0px;
+    object-fit: cover;
+    margin-top: 10px;
+    transition: 0.3s ease-in-out;
+    transition-property: box-shadow;
+  }
+  &__title {
+    font-weight: 700;
+    font-size: $small-size;
+    line-height: 17px;
+    color: $second-color;
+    margin: 5px 0;
+  }
+  &__date {
+    font-weight: 400;
+    font-size: $small-size;
+    line-height: 17px;
+    color: $accent-color;
+    margin: 2px 0;
+  }
+  &__place {
+    font-weight: 600;
+    font-size: $little-size;
+    line-height: 15px;
+    color: $accent-color;
+    margin: 2px 0;
+  }
+  &__pin {
+    position: relative;
+    &::before {
+      position: absolute;
+      top: 3px;
+      left: -9px;
+      content: '';
+      width: 6px;
+      height: 9px;
+      background-image: url('../images/pin.svg');
+    }
+  }
+}
+.notfound {
+  display: none;
+  height: 40vh;
+  margin-top: 100px;
+  color: $accent-color;
+  text-align: center;
+  font-weight: 400;
+  font-size: $high-size;
+  line-height: 1.5rem;
+}
+//  tablet
+@media screen and (min-width: 768px) {
+  .cards {
+    margin: 0 -4px;
+    &__item {
+      width: 196px;
+      max-height: 312px;
+      margin: 0 2px 30px 2px;
+    }
+    &__box {
+      position: relative;
+      &::before {
+        width: 153px;
+        height: 143px;
+      }
+    }
+    &__image {
+      width: 180px;
+      height: 227px;
+    }
+    &__title {
+      font-size: $medium-size;
+      line-height: 20px;
+    }
+    &__date {
+      font-size: $medium-size;
+      line-height: 20px;
+    }
+    &__place {
+      font-size: $small-size;
+      line-height: 17px;
+    }
+    &__pin {
+      position: relative;
+      &::before {
+        top: 4px;
+        left: -10px;
+        width: 7px;
+        height: 10px;
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+    }
+  }
+}
+//  desktop
+@media screen and (min-width: 1024px) {
+  .cards {
+    margin: 0 -28px;
+    &__item {
+      margin: 0 27px 30px 27px;
+    }
+  }
+}
+
+//button top
+.btn-to-top {
+  position: fixed;
+  bottom: 2vh;
+  right: 2vw;
+  z-index: 1000;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: $text-color;
+  cursor: pointer;
+  opacity: 0.9;
+  transition: 0.3s ease-in-out;
+  display: none;
+  background: $shadow-color;
+  backdrop-filter: blur(20px);
+
+  &__icon {
+    position: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(180deg);
+    width: 25px;
+    height: 25px;
+    fill: $fill-color;
+  }
+  &:hover {
+    background-color: $second-color;
+    backdrop-filter: blur(20px);
+    box-shadow: 1px 3px 24px -5px $box-color;
+  }
+}

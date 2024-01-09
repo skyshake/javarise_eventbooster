@@ -1,0 +1,160 @@
+.modal {
+  position: relative;
+  border-radius: 15px;
+  box-shadow: 0 0 115px 3px $second-color;
+  background-color: $accent-color;
+  margin: auto;
+  width: 280px;
+  &__team {
+    padding: 48px 20px 41px;
+  }
+  &__title {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+  &__text {
+    text-shadow: 1px 1px 2px $second-color;
+    font-size: $high-size;
+    font-weight: bold;
+  }
+
+  &__close {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    top: 8px;
+    right: 15px;
+    height: 30px;
+    background-color: $accent-color;
+    cursor: pointer;
+
+    &-btn {
+      width: 18px;
+      height: 18px;
+    }
+  }
+}
+.modal .modal__text {
+  margin-bottom: 44px;
+}
+.students__wrapper {
+  list-style: none;
+  text-align: center;
+  justify-content: center;
+  gap: 30px;
+}
+.student {
+  margin-bottom: 12px;
+
+  &__img {
+    border-radius: 15px;
+    box-shadow: 0 0 11px $second-color;
+  }
+  &__name {
+    font-weight: 500;
+    line-height: 1.389;
+    margin-bottom: 8px;
+    padding-top: 16px;
+    font-size: $normal-size;
+    text-align: center;
+    color: $text-color;
+  }
+  &__description {
+    font-weight: 400;
+    line-height: 1.357;
+    margin-bottom: 15px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    letter-spacing: 0.02em;
+    color: $text-color;
+  }
+  &-social__list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    margin-top: -10px;
+  }
+  &-social__link {
+    display: flex;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: $accent-color;
+    align-items: center;
+    justify-content: center;
+    transition: all 250ms linear;
+    cursor: pointer;
+    &:hover,
+    &:focus {
+      fill: $second-color;
+      background-color: $text-color;
+    }
+  }
+}
+.social__icon {
+  width: 20px;
+  height: 20px;
+}
+@media screen and (min-width: 480px){
+  .team {
+    width: 450px;
+  }
+  .modal__text {
+    font-size: 30px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .modal{
+    width: 750px;
+  }
+  .modal {
+    &__team {
+       padding: 48px 35px 41px;
+    }
+    &__text {
+       font-size: 32px;
+    }
+  }
+}
+.students__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+.student {
+  flex-basis: calc((100% - 20px) / 4);
+  &__img {
+    width: 75px;
+  }
+  &__name {
+    font-size: $normal-size;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .modal {
+    width: 800px;
+    &__text {
+      font-weight: bold;
+      display: flex;
+      flex-wrap: wrap;
+      font-size: 35px;
+    }
+  }
+  .student {
+    &__img {
+      width: 85px;
+      height: 85px;
+    }
+    &__name {
+      font-size: $normal-size;
+    }
+  }
+  .students__wrapper {
+    padding-left: 25px;
+  }
+}

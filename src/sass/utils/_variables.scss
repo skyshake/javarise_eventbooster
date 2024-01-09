@@ -1,0 +1,62 @@
+.hide {
+  display: none;
+  overflow: hidden;
+  transition: 0.5s ease-in-out;
+}
+
+.rotate {
+  transition: 0.5s ease-in-out;
+  transition-property: transform;
+  transform: rotate(180deg);
+}
+
+.backdrop {
+  position: fixed;
+  display: flex;
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.6);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: all 1000ms ease-in, opacity 1000ms ease-in,
+    visibility 1000ms ease-in;
+}
+.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+$bg-overlay:rgba(0, 0, 0, 0.8);
+$bg-color: #fff2fd;;
+$blur-color: #cccccc;
+$gradient-color:  rgba(11, 11, 11, 0.5);
+$bg-gradient-color: rgba(13, 13, 13, 0.19);
+$bg-linear-color: rgba(14, 14, 14, 0.8);
+$accent-color: #fff;
+$color-html: hsl(300, 100%, 60%);
+$stroke-color: hsl(0, 0%, 100%);
+$bright-color:  #ff65bd;  
+$light-color:  #ffe6ff;
+$dark-color: #ff2483;
+$second-color: #dc56c5;
+$box-color: rgba(255, 86, 197, 0.69);
+$third-color: rgba(220, 86, 197, 0.3);
+$title-color: #6b1839;
+$shadow-color: rgba(255, 255, 255, 0.2);
+$fill-color: #939393;
+$text-color: #0e0e0e;
+$focus-color:#2e009a;
+$main-color: #4c00fe;
+
+
+$Loader-size: 16rem;
+$Loader-offset: 1.5rem;
+$high-size: 25px;
+$normal-size: 20px;
+$medium-size: 16px;
+$small-size: 14px;
+$little-size: 12px;

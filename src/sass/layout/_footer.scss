@@ -1,0 +1,48 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  padding: 60px 34px 27px 34px;
+
+  &__content {
+    text-align: center;
+    color: $fill-color;
+    font-size: $small-size;
+    line-height: 1.22;
+  }
+  &__link {
+    color: inherit;
+    &:hover,
+    &:focus {
+      color: $second-color;
+      font-weight: 700;
+      transition: all 250ms linear;
+      text-shadow: 0 0 11px $second-color;
+    }
+  }
+}
+
+.heart-icon {
+  color: red;
+}
+
+@media screen and (min-width: 768px) {
+  .footer {
+    padding-top: 80px;
+    padding-bottom: 18px;
+    margin-left: auto;
+    margin-right: auto;
+
+    &__content {
+      font-size: $medium-size;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .footer {
+    padding-bottom: 19px;
+    &__content {
+      font-size: $medium-size;
+    }
+  }
+}
