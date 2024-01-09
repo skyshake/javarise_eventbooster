@@ -1,11 +1,11 @@
 {
   "name": "eventbooster-goit-group-5",
   "version": "1.0.0",
-  "description": "Team website design 'EventBooster' which presents the nearest events based on the search for the name and optionally the country",
-  "homepage": "https://gash94.github.io/eventbooster-goit-group-5",
+  "description": "Kelly Testing Repo for Event Booster",
+  "homepage": "https://skyshake.github.io/javarise_eventbooster/",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /eventbooster-goit-group-5/"
+    "build": "parcel build src/*.html --public-url /javarise_eventbooster/"
   },
   "repository": {
     "type": "git",
