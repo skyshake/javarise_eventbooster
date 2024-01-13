@@ -85,7 +85,7 @@
   height: 100%;
   color: transparent;
   user-select: none;
-  background-color: #fff;
+  background-color: black;
   border-radius: inherit;
   z-index: 1;
   cursor: pointer;
@@ -93,7 +93,7 @@
 
 .theme-switch__marker {
   position: relative;
-  background-color: #fff;
+  background-color: deeppink;
   width: 26px;
   height: 26px;
   border-radius: 50%;
@@ -120,19 +120,19 @@
 }
 
 .theme-switch__toggle:checked + .theme-switch__track {
-  background-color: aqua;
+  background-color: #fff;
 }
 
 .theme-switch__toggle:checked ~ .theme-switch__marker {
-  background-color: black;
+  background-color: deeppink;
   transform: translateX(35px);
 }
 
 .theme-switch__toggle:focus + .theme-switch__track,
 .theme-switch__toggle:active + .theme-switch__track {
-  box-shadow: 0 0 0 3px #fff;
+  box-shadow: 0 0 0 3px deeppink;
 }
 
 .theme-switch__icon {
-  fill: #fff;
+  fill: deeppink;
 }
