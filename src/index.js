@@ -7,3 +7,4 @@ import fadeEffect from './js/loader';
 import modalTeam from './js/modal-team';
 import pagination from './js/pagination';
 import updateModalData from './js/modal';
+import themeSwitchRef from './js/theme-mode';

@@ -15,12 +15,43 @@
       </div>
     </h1>
 
+    <!-- LIGHT THEME SWITCH -->
+    <div class="theme-switch">
+      <svg class="theme-switch__icon" aria-label="Moon icon">
+        <use href="./images/header/search.svg#moon"></use>
+      </svg>
+
+      <div class="theme-switch__control">
+        <input
+          class="theme-switch__toggle"
+          type="checkbox"
+          name="theme"
+          id="theme-switch-toggle"
+          aria-label="Theme switcher"
+        />
+        <label
+          aria-hidden="true"
+          class="theme-switch__track"
+          for="theme-switch-toggle"
+        >
+        </label>
+        <div aria-hidden="true" class="theme-switch__marker"></div>
+      </div>
+      <svg class="theme-switch__icon" role="img" aria-label="Sun icon">
+        <use href="./images/header/search.svg#sun"></use>
+      </svg>
+    </div>
+
     <div class="header__field-container">
       <form>
         <div class="header__field">
-
-          <input type="text" name="search-event" placeholder="Start searching" autocomplete="off"
-            class="header__input search__input" />
+          <input
+            type="text"
+            name="search-event"
+            placeholder="Start searching"
+            autocomplete="off"
+            class="header__input search__input"
+          />
           <button class="btn__submit" type="submit">
             <svg class="btn__icon" width="12px" height="12px">
               <use href="./images/sprite.svg#icon-search"></use>
@@ -30,17 +61,24 @@
 
         <div class="header__field">
           <div>
-            <input id="chose-country" type="text" name="search-event" placeholder="Choose country" class="header__input"
-              autocomplete="off" />
+            <input
+              id="chose-country"
+              type="text"
+              name="search-event"
+              placeholder="Choose country"
+              class="header__input"
+              autocomplete="off"
+            />
             <svg id="polygon" class="input__icon" width="15px" height="10px">
               <use href="./images/sprite.svg#icon-polygon"></use>
             </svg>
           </div>
           <div class="country hide">
             <ul class="country__list">
-
               <li class="country__item" data-country="">All countries</li>
-              <li class="country__item" data-country="US">United States Of America</li>
+              <li class="country__item" data-country="US">
+                United States Of America
+              </li>
               <li class="country__item" data-country="AD">Andorra</li>
               <li class="country__item" data-country="AI">Anguilla</li>
               <li class="country__item" data-country="AR">Argentina</li>
@@ -63,7 +101,9 @@
               <li class="country__item" data-country="CY">Cyprus</li>
               <li class="country__item" data-country="CZ">Czech Republic</li>
               <li class="country__item" data-country="DK">Denmark</li>
-              <li class="country__item" data-country="DO">Dominican Republic</li>
+              <li class="country__item" data-country="DO">
+                Dominican Republic
+              </li>
               <li class="country__item" data-country="EC">Ecuador</li>
               <li class="country__item" data-country="EE">Estonia</li>
               <li class="country__item" data-country="FO">Faroe Islands</li>
@@ -103,6 +143,7 @@
               <li class="country__item" data-country="ND">Northern Ireland</li>
               <li class="country__item" data-country="NO">Norway</li>
               <li class="country__item" data-country="PE">Peru</li>
+              <li class="country__item" data-country="PH">Philippines</li>
               <li class="country__item" data-country="PL">Poland</li>
               <li class="country__item" data-country="PT">Portugal</li>
               <li class="country__item" data-country="RO">Romania</li>
